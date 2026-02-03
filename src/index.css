@@ -1902,6 +1902,7 @@ a:hover {
   overflow-y: auto;
 
   box-shadow: var(--shadow-xl);
+  padding: 1rem;
 
 }
 
