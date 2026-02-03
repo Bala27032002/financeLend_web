@@ -435,78 +435,7 @@ const Loans = () => {
                 </div>
             )}
 
-            {/* Modal Styles */}
-            <style jsx>{`
-        .modal-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.7);
-          backdrop-filter: blur(4px);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-          padding: var(--spacing-lg);
-        }
-
-        .modal-content {
-          background: var(--color-bg-secondary);
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-lg);
-          max-width: 600px;
-          width: 100%;
-          max-height: 90vh;
-          overflow-y: auto;
-          box-shadow: var(--shadow-xl);
-        }
-
-        .modal-large {
-          max-width: 900px;
-        }
-
-        .modal-header {
-          padding: var(--spacing-lg);
-          border-bottom: 1px solid var(--color-border);
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-        }
-
-        .modal-header h2 {
-          margin: 0;
-          font-size: var(--font-size-2xl);
-        }
-
-        .modal-body {
-          padding: var(--spacing-lg);
-        }
-
-        .modal-footer {
-          padding: var(--spacing-lg);
-          border-top: 1px solid var(--color-border);
-          display: flex;
-          justify-content: flex-end;
-          gap: var(--spacing-sm);
-        }
-
-        .btn-icon {
-          background: none;
-          border: none;
-          color: var(--color-text-secondary);
-          cursor: pointer;
-          padding: var(--spacing-xs);
-          border-radius: var(--radius-sm);
-          transition: all var(--transition-fast);
-        }
-
-        .btn-icon:hover {
-          background: var(--color-bg-hover);
-          color: var(--color-text-primary);
-        }
-      `}</style>
+            {/* Modal Styles - Moved to index.css */}
         </div>
     );
 };
