@@ -187,7 +187,7 @@ const Payments = () => {
                                             </div>
                                         </td>
                                         <td>
-                                            <div style={{ fontWeight: 600, color: 'var(--color-primary)' }}>{payment.loanId}</div>
+                                            <div className="loan-id-text" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>{payment.loanId}</div>
                                         </td>
                                         <td style={{ fontWeight: 700, fontSize: 'var(--font-size-lg)' }}>
                                             {formatCurrency(payment.amount)}

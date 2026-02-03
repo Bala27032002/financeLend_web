@@ -36,7 +36,7 @@ const Loans = () => {
 
         principalAmount: '',
 
-        interestType: 'daily',
+        interestType: 'Weekly',
 
         interestRate: '',
 
@@ -168,7 +168,7 @@ const Loans = () => {
 
             principalAmount: '',
 
-            interestType: 'daily',
+            interestType: 'Weekly',
 
             interestRate: '',
 
@@ -206,7 +206,7 @@ const Loans = () => {
 
                     <h1 className="page-title">Loans Management</h1>
 
-                    <p className="page-subtitle">Manage all loans with daily and monthly interest calculations</p>
+                    <p className="page-subtitle">Manage all loans with Weekly and monthly interest calculations</p>
 
                 </div>
 
@@ -228,7 +228,7 @@ const Loans = () => {
 
                 <div className="flex gap-2" style={{ flexWrap: 'wrap' }}>
 
-                    <div className="form-group" style={{ flex: '1', minWidth: '250px', marginBottom: 0 }}>
+                    <div className="form-group" style={{ flex: '1', marginBottom: 0 }}>
 
                         <div style={{ position: 'relative' }}>
 
@@ -290,7 +290,7 @@ const Loans = () => {
 
                         <option value="">All Types</option>
 
-                        <option value="daily">Daily Interest</option>
+                        <option value="Weekly">Weekly Interest</option>
 
                         <option value="monthly">Monthly Interest</option>
 
@@ -368,7 +368,7 @@ const Loans = () => {
 
                                         <td>
 
-                                            <div style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
+                                            <div className="loan-id-text" style={{ fontWeight: 700, color: 'var(--color-primary)' }}>
 
                                                 {loan.loanId}
 
@@ -376,7 +376,7 @@ const Loans = () => {
 
                                             <div style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-text-tertiary)' }}>
 
-                                                {loan.loanTypeCode === 'D' ? 'Daily' : 'Monthly'}
+                                                {loan.loanTypeCode === 'D' ? 'Weekly' : 'Monthly'}
 
                                             </div>
 
@@ -398,7 +398,7 @@ const Loans = () => {
 
                                         <td>
 
-                                            <span className={`badge ${loan.interestType === 'daily' ? 'badge-info' : 'badge-warning'}`}>
+                                            <span className={`badge ${loan.interestType === 'Weekly' ? 'badge-info' : 'badge-warning'}`}>
 
                                                 {loan.interestType}
 
@@ -572,7 +572,7 @@ const Loans = () => {
 
                                         >
 
-                                            <option value="daily">Daily (Vatti)</option>
+                                            <option value="Weekly">Weekly </option>
 
                                             <option value="monthly">Monthly</option>
 
@@ -720,7 +720,7 @@ const Loans = () => {
 
                                 <h2>Loan Details</h2>
 
-                                <p style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', marginTop: '0.25rem' }}>
+                                <p className="loan-id-text" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', marginTop: '0.25rem' }}>
 
                                     {selectedLoan.loan.loanId}
 
@@ -784,7 +784,7 @@ const Loans = () => {
 
                             {/* Payment History */}
 
-                            <div className="card">
+                            <div className="card" style={{padding:'12px'}}>
 
                                 <div className="card-header">
 

@@ -7,7 +7,6 @@ import {
     FileText,
     CreditCard,
     TrendingUp,
-    Menu,
     X
 } from 'lucide-react';
 import Dashboard from './pages/Dashboard';
@@ -16,15 +15,15 @@ import Customers from './pages/Customers';
 import Payments from './pages/Payments';
 import './index.css';
 
+const navItems = [
+    { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
+    { path: '/loans', icon: FileText, label: 'Loans' },
+    { path: '/customers', icon: Users, label: 'Customers' },
+    { path: '/payments', icon: CreditCard, label: 'Payments' },
+];
+
 const Sidebar = ({ isOpen, onClose }) => {
     const location = useLocation();
-
-    const navItems = [
-        { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
-        { path: '/loans', icon: FileText, label: 'Loans' },
-        { path: '/customers', icon: Users, label: 'Customers' },
-        { path: '/payments', icon: CreditCard, label: 'Payments' },
-    ];
 
     return (
         <>
@@ -67,6 +66,29 @@ const Sidebar = ({ isOpen, onClose }) => {
     );
 };
 
+const BottomNav = () => {
+    const location = useLocation();
+
+    return (
+        <nav className="bottom-nav mobile-only">
+            {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = location.pathname === item.path;
+                return (
+                    <Link
+                        key={item.path}
+                        to={item.path}
+                        className={`bottom-nav-link ${isActive ? 'active' : ''}`}
+                    >
+                        <Icon size={20} />
+                        <span>{item.label}</span>
+                    </Link>
+                );
+            })}
+        </nav>
+    );
+};
+
 function App() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -78,9 +100,7 @@ function App() {
                 <main className="main-content">
                     {/* Mobile Header */}
                     <div className="mobile-header mobile-only">
-                        <button className="btn-icon" onClick={() => setSidebarOpen(true)}>
-                            <Menu size={24} />
-                        </button>
+                        <div style={{ width: 24 }}></div>
                         <div className="logo-small">
                             <TrendingUp size={24} />
                             <span>FinanceLend</span>
@@ -96,6 +116,8 @@ function App() {
                             <Route path="/payments" element={<Payments />} />
                         </Routes>
                     </div>
+
+                    <BottomNav />
                 </main>
 
                 <Toaster
